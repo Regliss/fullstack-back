@@ -9,12 +9,12 @@ const schemas = require('../apollo/schemas/product.schema');
 const resolvers = require('../apollo/resolvers/product.resolver');
 const app = express();
 
+app.use(cors());
 const graphQlServer = new ApolloServer({
   typeDefs:schemas,
   resolvers
 })
 graphQlServer.applyMiddleware({ app, path: '/graphql' })
-app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/v1/', apiRouter);
 

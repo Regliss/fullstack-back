@@ -1,4 +1,4 @@
-const stripe = require('stripe')("sk_test_ui2X6wM3PLYvWUqp2gojfzlF00Q9hwcRlo");
+const stripe = require('stripe')("sk_test_51IYB3kKHE4A4HHrOUKXd5GZqbWNq1QSmWvqY2al9fB1K2XCKk3vlC7N0e8Ob20IZVLEYrExnMZycwBlTKPuyrnNY001cANctnM");
 
 const initiateStripeSession = async (req) => {
     const session = await stripe.checkout.sessions.create({
