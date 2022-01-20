@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const config = require("../configs");
-const cors = require('cors')
+const cors = require('cors');
 const port = config.server.port;
 const apiRouter = require('../routes');
 const { ApolloServer, gql } = require('apollo-server-express');
