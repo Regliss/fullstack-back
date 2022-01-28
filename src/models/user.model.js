@@ -20,10 +20,22 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
+    isSubscribe: {
+		type: Boolean,
+		default: false
+	},
+	isPremium: {
+		type: Boolean,
+		default: false
+	},
+	releaseDate: {
+		type: String
+	},
     isAdmin: {
         type: Boolean,
         required: true,
-    }    
+    },
+    orders:[{ type: Schema.Types.ObjectId, ref: 'Order' }]
 });
 
 module.exports = mongoose.model('User', userSchema);
