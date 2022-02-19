@@ -8,19 +8,17 @@ const { ApolloServer, gql } = require('apollo-server-express');
 
 const ProductSchema = require('../apollo/schemas/product.schema');
 const UserSchema = require('../apollo/schemas/user.schema');
-const OrderSchema = require('../apollo/schemas/order.schema');
 const GenreSchema = require('../apollo/schemas/genre.schema');
 
 const productResolvers = require('../apollo/resolvers/product.resolver');
 const userResolvers = require('../apollo/resolvers/user.resolver');
-const orderResolvers = require('../apollo/resolvers/order.resolver');
 const genreResolvers = require('../apollo/resolvers/genre.resolver');
 
 const app = express();
 
 const graphQlServer = new ApolloServer({
-  typeDefs: [ProductSchema,UserSchema,OrderSchema,GenreSchema],
-  resolvers:[productResolvers,userResolvers,orderResolvers, genreResolvers]
+  typeDefs: [ProductSchema,UserSchema,GenreSchema],
+  resolvers:[productResolvers,userResolvers, genreResolvers]
 });
 
 graphQlServer.applyMiddleware({ app, path: '/graphql' })

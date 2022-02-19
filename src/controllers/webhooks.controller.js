@@ -39,16 +39,16 @@ exports.stripewebhook = (req, res) => {
         productIdArray.push(element.id);
       });
       
-      const newOrder = new Order({
-        amount: data.object.amount / 100,
-        date: data.object.created,
-        user: data.object.metadata.userId,
-        products: productIdArray,
-        stripeId: data.object.id,
-        status: data.object.status
-      });
+      // const newOrder = new Order({
+      //   amount: data.object.amount / 100,
+      //   date: data.object.created,
+      //   user: data.object.metadata.userId,
+      //   products: productIdArray,
+      //   stripeId: data.object.id,
+      //   status: data.object.status
+      // });
 
-      newOrder.save().then((data) => console.log(data)).then(err => console.log(err));
+      // newOrder.save().then((data) => console.log(data)).then(err => console.log(err));
     
       break;
     
