@@ -12,5 +12,6 @@ module.exports = gql`
     }
     extend type Query {
         getOrder(id:ID): Order
+        getOrders: [Order]
     }
 `

@@ -13,9 +13,9 @@ const productSchema = new Schema({
     director: String,
     distribution: String,
     scriptwriter: String,
-    genre: {
+    genres: [{ 
       type:Schema.Types.ObjectId, ref:'Genre'
-  }
+  }]
 });
 
 module.exports = mongoose.model('Product', productSchema);

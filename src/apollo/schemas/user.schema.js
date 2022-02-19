@@ -7,6 +7,9 @@ module.exports = gql`
         lastName: String
         password: String,
         email: String,
+        isStandart: Boolean,
+        isPremium: Boolean,
+        subscribeDate: String,
         isAdmin: Boolean
     }
     extend type Query {

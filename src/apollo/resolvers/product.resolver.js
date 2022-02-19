@@ -6,7 +6,7 @@ module.exports = {
             return Product.find();
         },
         getProduct(parent, args, context) {
-            return Product.findById(args.id);
+            return Product.findById(args.id).populate('genres');
         }
     },
     Mutation: {
@@ -15,15 +15,22 @@ module.exports = {
                 {
                     title: args.title,
                     description: args.description,
-                    price: args.price,
-                    img: args.img
+                    img: args.img,
+                    age: args.age,
+                    language: args.language,
+                    releaseDate: args.releaseDate,
+                    duration: args.duration,
+                    // genre: [Action, Anime, Comédies, Documentaires, Drames, Fantastique, Français, Horreur, Indépendants, International, Jeunesse et famille, Musique et comédies musicales, Policier, Primés, Romance, SF, Thriller]
+                    director: args.director,
+                    distribution: args.distribution,
+                    scriptwriter: args.scriptwriter,
+                    genres: args.genres
                 }
             )
             return newProduct.save();
         },
-        updateProduct(parent, {id, title, description, img, price}) {
-            return Product.findByIdAndUpdate(id, { title: title, description: description, img: img, price: price });
+        updateProduct(parent, {id, title, description, img, age, language, releaseDate, duration, director, distribution, scriptwriter, genres}) {
+            return Product.findByIdAndUpdate(id, { title: title, description: description, img: img, age: age, language: language, releaseDate: releaseDate, duration: duration, director: director, distribution: distribution, scriptwriter: scriptwriter, genres:genes});
         }
     }
-
 }
