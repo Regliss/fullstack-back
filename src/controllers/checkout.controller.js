@@ -2,31 +2,43 @@ const stripe = require('stripe')("sk_test_51IYB3kKHE4A4HHrOUKXd5GZqbWNq1QSmWvqY2
 
 const initiateStripeSession = async (req) => {
 
-  console.log(req.user);
+  // console.log(req.user);
 
   const priceDataArray = [];
 
-  req.body.cart.forEach((element) => {
-    priceDataArray.push({
-      price_data: {
-        currency: "eur",
-        product_data: {
-          name: element.title,
-        },
-        unit_amount: element.price * 100,
+  priceDataArray.push({
+    price_data: {
+      currency: "eur",
+      product_data: {
+        name: "Abonnement",
       },
-      quantity: element.qty,
-    });
+      unit_amount: 8.99 * 100,
+    },
+    quantity: 1,
   });
+
+  // req.body.cart.forEach((element) => {
+  //   priceDataArray.push({
+  //     price_data: {
+  //       currency: "eur",
+  //       product_data: {
+  //         name: element.title,
+  //       },
+  //       unit_amount: element.price * 100,
+  //     },
+  //     quantity: element.qty,
+  //   });
+  // });
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     line_items: priceDataArray,
     payment_intent_data: {
-      metadata: { userId: req.user.id, cart: JSON.stringify(req.body.cart) },
+      // metadata: { userId: req.user.id, cart: JSON.stringify(req.body.cart) },
     },
     mode: "payment",
-    success_url: `http://localhost:3000/confirmation?amount=${req.body.total}`,
+    // success_url: `http://localhost:3000/confirmation`,
+    success_url: `http://localhost:3000/register`,
     cancel_url: `http://localhost:3000/cancel`,
   });
   return session;

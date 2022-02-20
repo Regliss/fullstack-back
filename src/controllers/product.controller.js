@@ -44,18 +44,18 @@ exports.create = (req, res) => {
 //     .catch((err) => res.send(err));
 // };
 
-// exports.getProducts = (req, res) => {
-//   Product.find()
-//     .then((data) => {
-//       if (!data) {
-//         res.status(404).send({
-//           message: `Product with id ${req.params.id} not found`,
-//         });
-//       }
-//       res.send(data);
-//     })
-//     .catch((err) => res.send(err));
-// };
+ exports.getProducts = (req, res) => {
+   Product.find()
+     .then((data) => {
+       if (!data) {
+         res.status(404).send({
+           message: `Product with id ${req.params.id} not found`,
+         });
+       }
+       res.send(data);
+     })
+     .catch((err) => res.send(err));
+};
 
 // exports.update = (req, res) => {
 //   Product.findOneAndUpdate(

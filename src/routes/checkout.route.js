@@ -3,6 +3,7 @@ const router = express.Router();
 const checkoutController = require('../controllers/checkout.controller');
 const verifyToken = require('../helpers/verifyToken');
 
-router.post('/', verifyToken ,checkoutController.createSession);
+// router.post('/', verifyToken ,checkoutController.createSession);
+router.post('/', checkoutController.createSession);
 
 module.exports = router;

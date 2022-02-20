@@ -8,4 +8,4 @@ const genreSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('Category', genreSchema);
+module.exports = mongoose.model('Genre', genreSchema);
