@@ -3,14 +3,13 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
     title: String,
-    link: String,
+    img: String,
     // age: [0, 7, 13, 16, 18],
     age: Number,
     language: String,
     releaseDate: String,
     duration: String,
     description: String,
-    // genre: ["Action", "Anime", "Comédies", "Documentaires", "Drames", "Fantastique", "Français", "Horreur", "Indépendants", "International", "Jeunesse et famille", "Musique et comédies musicales", "Policier", "Primés", "Romance", "SF", "Thriller"],
     director: String,
     distribution: String,
     scriptwriter: String,
