@@ -16,6 +16,7 @@ module.exports = {
                     title: args.title,
                     description: args.description,
                     img: args.img,
+                    trailer: args.trailer,
                     age: args.age,
                     language: args.language,
                     releaseDate: args.releaseDate,
@@ -29,8 +30,8 @@ module.exports = {
             )
             return newProduct.save();
         },
-        updateProduct(parent, {id, title, description, img, age, language, releaseDate, duration, director, distribution, scriptwriter, genres}) {
-            return Product.findByIdAndUpdate(id, { title: title, description: description, img: img, age: age, language: language, releaseDate: releaseDate, duration: duration, director: director, distribution: distribution, scriptwriter: scriptwriter, genres:genres});
+        updateProduct(parent, {id, title, description, img, trailer, age, language, releaseDate, duration, director, distribution, scriptwriter, genres}) {
+            return Product.findByIdAndUpdate(id, { title: title, description: description, img: img, trailer:trailer, age: age, language: language, releaseDate: releaseDate, duration: duration, director: director, distribution: distribution, scriptwriter: scriptwriter, genres:genres});
         }
     }
 }

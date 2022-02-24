@@ -3,7 +3,8 @@ const Product = require("../models/product.model");
 exports.create = (req, res) => {
   const product = new Product({
     title: req.body.title,
-    link: req.body.link,
+    img: req.body.img,
+    trailer: req.body.trailer,
     age: req.body.age,
     language: req.body.language,
     releaseDate: req.body.releaseDate,

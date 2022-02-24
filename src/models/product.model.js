@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const productSchema = new Schema({
     title: String,
     img: String,
+    trailer: String,
     // age: [0, 7, 13, 16, 18],
     age: Number,
     language: String,
