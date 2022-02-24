@@ -3,7 +3,7 @@ const Product = require('../../models/product.model');
 module.exports = {
     Query: {
         getProducts: () => {
-            return Product.find();
+            return Product.find().populate('genres');
         },
         getProduct(parent, args, context) {
             return Product.findById(args.id).populate('genres');
@@ -30,7 +30,7 @@ module.exports = {
             return newProduct.save();
         },
         updateProduct(parent, {id, title, description, img, age, language, releaseDate, duration, director, distribution, scriptwriter, genres}) {
-            return Product.findByIdAndUpdate(id, { title: title, description: description, img: img, age: age, language: language, releaseDate: releaseDate, duration: duration, director: director, distribution: distribution, scriptwriter: scriptwriter, genres:genes});
+            return Product.findByIdAndUpdate(id, { title: title, description: description, img: img, age: age, language: language, releaseDate: releaseDate, duration: duration, director: director, distribution: distribution, scriptwriter: scriptwriter, genres:genres});
         }
     }
 }

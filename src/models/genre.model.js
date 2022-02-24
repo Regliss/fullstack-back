@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const genreSchema = new Schema({
     title: {
         type: String,
-        lowercase: true
+        lowercase: false
     }
 })
 
