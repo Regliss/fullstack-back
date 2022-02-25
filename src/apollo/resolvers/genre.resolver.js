@@ -2,9 +2,6 @@ const Genre = require('../../models/genre.model');
 
 module.exports = {
     Query: {
-        // getGenres() {
-        //     return Genre.find();
-        // },
         getGenres: () => {
             return Genre.find();
         },
