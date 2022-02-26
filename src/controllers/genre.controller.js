@@ -65,3 +65,16 @@ exports.removeOne = (req, res) => {
     })
     .catch((err) => res.send(err));
 };
+
+exports.remove = (req, res) => {
+  Genre.findByIdAndRemove(req.params.id)
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({
+          message: `Genre with id ${req.params.id} not found!`,
+        });
+      }
+      res.send(data);
+    })
+    .catch((err) => res.send(err));
+};

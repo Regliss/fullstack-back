@@ -10,7 +10,7 @@ exports.register = (req, res) => {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     isAdmin: req.body.isAdmin,
-    isStandart: req.body.isStandart,
+    isSubscribe: req.body.isSubscribe,
     isPremium: req.body.isPremium,
     subscribeDate: req.body.subscribeDate,
     email: req.body.email,
@@ -47,7 +47,7 @@ exports.addAdmin = (req, res) => {
 		const user = new User({
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
-      isStandart: req.body.isStandart,
+      isSubscribe: req.body.isSubscribe,
       isPremium: req.body.isPremium,
       subscribeDate: req.body.subscribeDate,
 			isAdmin: req.body.isAdmin,

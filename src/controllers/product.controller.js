@@ -32,18 +32,18 @@ exports.create = (req, res) => {
     });
 };
 
-// exports.findOne = (req, res) => {
-//   Product.findById(req.params.id)
-//     .then((data) => {
-//       if (!data) {
-//         res.status(404).send({
-//           message: `Product with id ${req.params.id} not found!`,
-//         });
-//       }
-//       res.send(data);
-//     })
-//     .catch((err) => res.send(err));
-// };
+exports.findOne = (req, res) => {
+  Product.findById(req.params.id)
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({
+          message: `Product with id ${req.params.id} not found!`,
+        });
+      }
+      res.send(data);
+    })
+    .catch((err) => res.send(err));
+};
 
  exports.getProducts = (req, res) => {
    Product.find()

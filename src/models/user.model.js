@@ -28,7 +28,7 @@ const userSchema = new Schema({
 		type: Boolean,
 		default: false
 	},
-	releaseDate: {
+	subscribeDate: {
 		type: String
 	},
     isAdmin: {
