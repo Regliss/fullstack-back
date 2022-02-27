@@ -38,7 +38,7 @@ const initiateStripeSession = async (req) => {
     },
     mode: "payment",
     // success_url: `http://localhost:3000/confirmation`,
-    success_url: `http://localhost:3000/register`,
+    success_url: `http://localhost:3000/movies`,
     cancel_url: `http://localhost:3000/cancel`,
   });
   return session;

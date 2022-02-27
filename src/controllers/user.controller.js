@@ -43,7 +43,8 @@ exports.register = (req, res) => {
 };
 
 exports.addAdmin = (req, res) => {
-		let hasedPassword = bcrypt.hashSync(req.body.password, 10);
+  let hashedPassword = bcrypt.hashSync(req.body.password, 10);
+  //   console.log(hasedPassword);
 		const user = new User({
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
@@ -52,9 +53,9 @@ exports.addAdmin = (req, res) => {
       subscribeDate: req.body.subscribeDate,
 			isAdmin: req.body.isAdmin,
 			email: req.body.email,
-			password: hasedPassword,
+			password: hashedPassword,
 		});
-
+    console.log(user);
 		user.save()
 		.then((data) => {
 			let userToken = jwt.sign({
