@@ -18,6 +18,6 @@ module.exports = gql`
     }
     extend type Mutation {
         createUser(firstName:String, lastName:String, password:String, email:String, isStandart:String, isPremium:String, subscribeDate:String, isAdmin:Boolean):User
-        updateUser(id:ID!, firstName:String, lastName:String, password:String, email:String, isStandart:String, isPremium:String, subscribeDate:String, isAdmin:Boolean]):User
+        updateUser(id:ID!, firstName:String, lastName:String, password:String, email:String, isStandart:String, isPremium:String, subscribeDate:String, isAdmin:Boolean):User
     }
 `
