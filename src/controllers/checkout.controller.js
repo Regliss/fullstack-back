@@ -12,7 +12,7 @@ const initiateStripeSession = async (req) => {
       product_data: {
         name: "Abonnement",
       },
-      unit_amount: 8.99 * 100,
+      unit_amount: req.body.price * 100,
     },
     quantity: 1,
   });
@@ -38,8 +38,8 @@ const initiateStripeSession = async (req) => {
     },
     mode: "payment",
     // success_url: `http://localhost:3000/confirmation`,
-    success_url: `http://localhost:3000/movies`,
-    cancel_url: `http://localhost:3000/cancel`,
+    success_url: `https://fullstack-front-nper4ad6s-thomaspomart-ynovcom.vercel.app/movies`,
+    cancel_url: `https://fullstack-front-nper4ad6s-thomaspomart-ynovcom.vercel.app/cancel`,
   });
   return session;
 };
