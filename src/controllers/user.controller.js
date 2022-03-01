@@ -33,6 +33,7 @@ exports.register = (req, res) => {
       res.status(200).send({
         auth: true,
         token: userToken,
+        isAdmin: data.isAdmin,
       });
     })
     .catch((err) => {
@@ -84,6 +85,7 @@ exports.login = (req, res) => {
           message: "password not valid",
           auth: false,
           token: null,
+
         });
       }
       let userToken = jwt.sign(
@@ -99,6 +101,7 @@ exports.login = (req, res) => {
       res.status(200).send({
         auth: true,
         token: userToken,
+        isAdmin: user.isAdmin,
       });
     })
     .catch((err) => res.status(404).send(err));

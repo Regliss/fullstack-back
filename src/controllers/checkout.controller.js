@@ -38,7 +38,7 @@ const initiateStripeSession = async (req) => {
     },
     mode: "payment",
     // success_url: `http://localhost:3000/confirmation`,
-    success_url: `https://fullstack-front-nper4ad6s-thomaspomart-ynovcom.vercel.app/movies`,
+    success_url: `https://fullstack-front-nper4ad6s-thomaspomart-ynovcom.vercel.app/login`,
     cancel_url: `https://fullstack-front-nper4ad6s-thomaspomart-ynovcom.vercel.app/cancel`,
   });
   return session;
